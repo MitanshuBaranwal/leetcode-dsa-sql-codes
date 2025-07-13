@@ -7,4 +7,3 @@ class Solution(object):
             print(diff)
             if diff in dct.keys() and dct[diff]!=i:
                 return [i,dct[diff]]
-        return False
