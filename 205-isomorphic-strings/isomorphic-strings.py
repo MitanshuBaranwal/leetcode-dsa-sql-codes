@@ -7,9 +7,9 @@ class Solution:
         for i in range(len(s)):
             if s[i]in dct and dct[s[i]]!=t[i]:
                 return False
-            dct[s[i]] = t[i]
-        for i in range(len(t)):
+
             if t[i]in dct2 and dct2[t[i]]!=s[i]:
                 return False
+            dct[s[i]] = t[i]
             dct2[t[i]] = s[i]
         return True
