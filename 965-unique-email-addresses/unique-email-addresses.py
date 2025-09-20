@@ -1,12 +1,10 @@
 class Solution:
     def numUniqueEmails(self, emails: List[str]) -> int:
-        st = set()
-        for i in range(len(emails)):
-            mailid, domain=  emails[i].split("@")
-            if "." in  mailid:
-                mailid =  mailid.replace(".","")
-            if "+" in mailid:
-                mailid= mailid.split("+")[0]
-            finalmail = mailid+"@"+domain
-            st.add(finalmail)
+        st= set()
+        for email in emails:
+            emailpart1,emailpart2= email.split("@")
+            emailpart1= emailpart1.split("+")[0]
+            emailpart1= emailpart1.replace(".","")
+            print(emailpart1)
+            st.add(emailpart1+"@"+emailpart2)
         return len(st)
