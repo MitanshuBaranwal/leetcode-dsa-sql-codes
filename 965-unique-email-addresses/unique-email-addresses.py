@@ -5,6 +5,5 @@ class Solution:
             emailpart1,emailpart2= email.split("@")
             emailpart1= emailpart1.split("+")[0]
             emailpart1= emailpart1.replace(".","")
-            print(emailpart1)
             st.add(emailpart1+"@"+emailpart2)
         return len(st)
