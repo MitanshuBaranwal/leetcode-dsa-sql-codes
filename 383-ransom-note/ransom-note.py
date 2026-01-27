@@ -1,8 +1,10 @@
 class Solution:
     def canConstruct(self, ransomNote: str, magazine: str) -> bool:
-        ransomNotedct= Counter(ransomNote)
-        magazinedct= Counter(magazine)
-        for i in ransomNotedct:
-            if i not in magazinedct or ransomNotedct[i] > magazinedct[i]:
+        ransomNote = Counter(ransomNote)
+        magazine = Counter(magazine)
+        for key,value in ransomNote.items():
+            if key not in magazine.keys():
+                return False
+            if magazine[key] < value:
                 return False
         return True
