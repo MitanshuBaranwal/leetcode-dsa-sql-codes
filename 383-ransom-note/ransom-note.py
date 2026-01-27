@@ -3,7 +3,7 @@ class Solution:
         ransomNote = Counter(ransomNote)
         magazine = Counter(magazine)
         for key,value in ransomNote.items():
-            if key not in magazine.keys():
+            if key not in magazine:
                 return False
             if magazine[key] < value:
                 return False
