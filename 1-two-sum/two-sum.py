@@ -5,9 +5,9 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        dct = dict()
-        for i,j in enumerate(nums):
-            diff = target - j
-            if diff in dct.keys():
-                return [dct[diff],i]
-            dct[j] = i
+        dct = {}
+        for i in range(len(nums)):
+            diff= target-nums[i] 
+            if dct and diff in dct:
+                return [i,dct[diff]]
+            dct[nums[i]] = i
